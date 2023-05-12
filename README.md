@@ -40,5 +40,5 @@ We will create an Elastic File System (EFS) with mount targets in each availabil
 
 Obtain a domain name for your WordPress website if we don't have one. Configure DNS records to point our domain to the public IP address of your EC2 instance or set up an Amazon Route 53 record for our domain.
 
-# Now it's time to deploy!
+### Now it's time to deploy!
 Access your WordPress website through the domain name to ensure it's working correctly.
