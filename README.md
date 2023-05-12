@@ -29,14 +29,16 @@ As for our private subnets, which will be used for backend application hosting a
 
 Note: NAT-GW is a chargable service per hour, so I will only use them when needed them otherwise they will remain down.
 
-I set up HOST for accessing my instances in the private subnets as I can't access them from public internet. I applied some security for the host by changing the `ssh port` 22 to another custom port[from instances and from security group also]. change the security group for the ssh connection which will only connect from home networks.
+Launch an EC2 instance using a suitable AMI (Amazon Machine Image), choose the desired instance type, storage, and other configuration options. Configure the network settings to use the VPC and subnet we created.
 
-We are going to create a Amazon Relational Database Service (Amazon RDS) to host our WordPress database.
-Amazon RDS is an AWS service that makes it easy to set up, operate, and scale a relational database in the cloud.
+We are going to create a Amazon Relational Database Service (Amazon RDS) using MySQL or another supported database engine to host our WordPress database. Configure the RDS instance with appropriate storage, instance size, and networking settings.
+Ensure the RDS instance is accessible from the EC2 instances within your VPC.
+
+Connect to the EC2 instance using SSH or other remote access methods. Download and install WordPress on the EC2 instance. Configure the WordPress installation, including the database connection settings.
 
 We will create an Elastic File System (EFS) with mount targets in each availability zone to store the files and application codes for our WordPress site. Then from Amazon EC2 instance move files to EFS.
 
-We will register a domain name in Route 53 for our WordPress site.
-Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. You can use Amazon Route 53 to configure DNS health checks to route traffic to healthy endpoints or to independently monitor the health of your application and its endpoints.
+Obtain a domain name for your WordPress website if we don't have one. Configure DNS records to point our domain to the public IP address of your EC2 instance or set up an Amazon Route 53 record for our domain.
 
-Now it's time to deploy!
+# Now it's time to deploy!
+Access your WordPress website through the domain name to ensure it's working correctly.
