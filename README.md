@@ -43,4 +43,6 @@ Obtain a domain name for your WordPress website if we don't have one. Configure 
 ### Now it's time to deploy!
 Access your WordPress website through the domain name to ensure it's working correctly.
 
+
+
 ##### credits: @Azeez Salu, youtube channel aos note 
