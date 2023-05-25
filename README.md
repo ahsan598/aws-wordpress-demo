@@ -45,4 +45,4 @@ Access your WordPress website through the domain name to ensure it's working cor
 
 
 
-##### credits: @Azeez Salu, youtube channel aos note 
+##### Learned from aos note by @Azeez Salu 
