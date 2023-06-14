@@ -1,24 +1,27 @@
 ## Deploying a WordPress website on AWS secuerly and high availabilty
 
-### Resources used in this project:
--   Amazon VPC (Virtual Private Cloud) with Public & Private Subnets in two Availability Zones
--   Internet Gateway & NAT Gateways
--   Public Route Table (Public subnet)
--   Private Route Table (Private subnet)
--   Route 53 ( Public & Private Hosted Zone) with simple routing policies
--   EC2 Instances ( Security groups, NACL )
--   Application Load Balancer
--   Auto Scaling Group
--   Elastic File System (EFS)
--   RDS ( Multi AZ, Replicas )
--   Install WordPress
+### Resources created in this project:
+- Amazon Virtual Private Cloud (Amazon VPC)
+- Internet Gateway (IGW)
+- NAT Gateway (across all public subnets)
+- Amazon VPC subnets (public, private) in all the Availability Zones (AZs) selected
+- Routing tables for public subnets - routing through IGW
+- Routing tables for private subnets - routing through NAT Gateway
+- Mulitple VPC Security Groups
+- Bastion Auto Scaling Group instances - in public subnets
+- Amazon Relational Database Service (Amazon RDS) Aurora cluster - in private - subnets
+- Amazon Elastic File System (Amazon EFS) file system - with mount targets in private subnets
+- Amazon Elastic Load Balancing (Amazon ELB) Application Load Balancer (ALB) - in public subnets
+- Amazon Route53 DNS record set
+- Amazon CloudWatch alarms to monitor Amazon EFS burst credit balance
+- WordPress
 
 
 ### Project Architecture:
 ![Project Diagram](https://github.com/ahsan598/aws-wordpress-website/blob/main/aws-wordpress-website-diagram.svg)
 
 
-### How I Implemented:
+### Deployment:
 
 Navigate to AWS console, select the region nearest to your location and create a custom VPC for this project. Then create two public subnets and four private subnets; [total 6 subnets] in two AZ's (availabilty zones). 
 
