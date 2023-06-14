@@ -27,7 +27,7 @@ Internet gateway allows communication between your public subnets and the intern
 Then in the routing table we have to configure the route internet traffic from IGW to public subnets.
 As for our private subnets, which will be used for backend application hosting and database hosting, we don't want to access them from the internet directly. So we need NAT gateway for updates, security patches or any download purpose. So we need to create NAT-GW(Network Address Translation Gateway) for this puposes.
 
-Note: NAT-GW is a chargable service per hour, so I will only use them when needed them otherwise they will remain down.
+##### Note: NAT-GW is a chargable service per hour, so I will only use them when needed them otherwise they will remain down.
 
 Launch an EC2 instance using a suitable AMI (Amazon Machine Image), choose the desired instance type, storage, and other configuration options. Configure the network settings to use the VPC and subnet we created.
 
