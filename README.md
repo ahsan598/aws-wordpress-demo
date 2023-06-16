@@ -4,7 +4,7 @@
 - Amazon Virtual Private Cloud (Amazon VPC)
 - Internet Gateway (IGW)
 - NAT Gateway (across all public subnets)
-- Public & Private Route Tables to route internet traffic
+- Route Tables to route internet traffic
 - Amazon VPC subnets (public, private) in all the Availability Zones (AZs) selected
 - Routing tables for public subnets - routing through IGW
 - Routing tables for private subnets - routing through NAT Gateway
