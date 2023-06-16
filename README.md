@@ -1,9 +1,10 @@
-## Deploying a WordPress website on AWS secuerly and high availabilty
+## Deploying a WordPress website on AWS highly secure and availabilty
 
 ### Resources created in this project:
 - Amazon Virtual Private Cloud (Amazon VPC)
 - Internet Gateway (IGW)
 - NAT Gateway (across all public subnets)
+- Public & Private Route Tables to route internet traffic
 - Amazon VPC subnets (public, private) in all the Availability Zones (AZs) selected
 - Routing tables for public subnets - routing through IGW
 - Routing tables for private subnets - routing through NAT Gateway
@@ -27,8 +28,7 @@ Navigate to AWS console, select the region nearest to your location and create a
 
 Internet gateway allows communication between your public subnets and the internet and that's why we need to create a IGW (Internet Gateway) for this purpose.
 
-Then in the routing table we have to configure the route internet traffic from IGW to public subnets.
-As for our private subnets, which will be used for backend application hosting and database hosting, we don't want to access them from the internet directly. So we need NAT gateway for updates, security patches or any download purpose. So we need to create NAT-GW(Network Address Translation Gateway) for this puposes.
+Then in the routing table we have to configure the route internet traffic from IGW to public subnets. As for our private subnets, which will be used for backend application hosting and database hosting, we don't want to access them from the internet directly. So we need NAT gateway for updates, security patches or any download purpose. So we need to create NAT-GW(Network Address Translation Gateway) for this puposes.
 
 ##### Note: NAT-GW is a chargable service per hour, so I will only use them when needed them otherwise they will remain down.
 
@@ -45,9 +45,3 @@ Obtain a domain name for your WordPress website if we don't have one. Configure 
 
 ### Now it's time to deploy!
 Access your WordPress website through the domain name to ensure it's working correctly.
-
-
-
-
-
-##### Learned from aos note by @Azeez Salu 
